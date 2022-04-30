@@ -1,7 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { getOffersData } from './store/offersActions';
 
-function App() {
+const App = () => {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(getOffersData())
+  }, [dispatch])
+
   return (
     <div className="App">
       <header className="App-header">
