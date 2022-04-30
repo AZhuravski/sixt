@@ -2,7 +2,6 @@ import PropTypes from 'prop-types'
 
 const OfferItem = (props) => {
     const {description, shortSubline, imageUrl, dayPrice, totalPrice} = props
-    console.log(props)
     const price = dayPrice.amount.display.split(',')
     const priceEuro = price[0] || '0' 
     const priceCents = price[1] || '00' 

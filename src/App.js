@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { getOffersData } from './store/offersActions';
 import Notification from './components/Notification';
 import Offers from './components/Offers';
+import Header from './components/Header';
 
 const App = () => {
   const dispatch = useDispatch()
