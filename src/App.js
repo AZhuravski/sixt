@@ -5,6 +5,7 @@ import { getOffersData } from './store/offersActions';
 import Notification from './components/Notification';
 import Offers from './components/Offers';
 import Header from './components/Header';
+import styled from '@emotion/styled';
 
 const App = () => {
   const dispatch = useDispatch()
@@ -14,12 +15,18 @@ const App = () => {
   }, [dispatch])
 
   return (
-    <div className="App">
+    <StyledAppWrapper>
       <Header />
       <Notification />
       <Offers />
-    </div>
+    </StyledAppWrapper>
   );
 }
 
 export default App;
+
+
+const StyledAppWrapper = styled.div({
+  maxWidth: 1600,
+  margin: '0 auto',
+})

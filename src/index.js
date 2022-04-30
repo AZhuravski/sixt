@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
 import { Provider } from 'react-redux'
 import store from './store/store'
 import { Global, css } from '@emotion/react';
+import '@csstools/normalize.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -22,8 +22,9 @@ root.render(
         }
 
         body {
-          font-size: 1.3rem;
+          font-size: 1.7rem;
           line-height: 1.5;
+          background-color: #FFF;
           margin: 0;
           font-family: Roboto, Roboto Condensed, Rokkitt, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
           -webkit-font-smoothing: antialiased;

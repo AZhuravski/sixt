@@ -6,7 +6,6 @@ const Header = () => {
             <StyledLogoWrapper>
                 Logo
             </StyledLogoWrapper>
-            <StyledSubHeader></StyledSubHeader>
         </StyledHeader>
     )
 }
@@ -24,9 +23,4 @@ const StyledLogoWrapper = styled.div({
     minHeight: '4.375rem',
     padding: '0.5rem 1.25rem',
     position: 'relative',
-})
-
-const StyledSubHeader = styled.div({
-    background: '#191919',
-    height: '3rem',
 })

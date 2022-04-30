@@ -14,8 +14,8 @@ const Offers = () => {
             </StyledCounter>
             <StyledOfferList>
                 {offerList.map(item => (
+                    <StyledItemWrapper key={item.id}>
                     <OfferItem 
-                        key={item.id}
                         description={item.headlines.description}
                         shortSubline={item.headlines.shortSubline}
                         imageUrl={item.carGroupInfo.modelExample.imageUrl}
@@ -23,6 +23,7 @@ const Offers = () => {
                         dayPrice={item.prices.dayPrice}
                         totalPrice={item.prices.totalPrice}
                     />
+                    </StyledItemWrapper>
                 ))}
             </StyledOfferList>
         </StyledWrapper>
@@ -34,8 +35,8 @@ export default Offers
 
 
 const StyledWrapper = styled.section({
-    backgroundColor: '#ff5f00',
-    padding: '1.25rem 0',
+    backgroundColor: 'rgb(242,242,242)',
+    padding: '1.25rem 0.5rem',
 })
 
 const StyledCounter = styled.div({
@@ -52,7 +53,24 @@ const StyledCounter = styled.div({
 const StyledOfferList = styled.div({
     display: 'flex',
     flexWrap: 'wrap',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+})
+
+const StyledItemWrapper = styled.div({
+    padding: '0.5rem',
+    margin: '0',
+    width: '100%',
+    height: 'auto',
+    aspectRatio: '1 / 1',
+    '@media(min-width: 499px)': {
+        width: '50%',
+    },
+    '@media(min-width: 780px)': {
+        width: '33.33%',
+    },
+    '@media(min-width: 992px)': {
+        width: '25%',
+    },
+
 })
 
