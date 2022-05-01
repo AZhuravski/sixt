@@ -1,19 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    offers: [],
-}
+  offers: [],
+};
 
 const offersSlice = createSlice({
-    name: 'offers',
-    initialState,
-    reducers: {
-        setOffersData(state, action) {
-            state.offers = action.payload.offers
-        },
-    }
-})
+  name: "offers",
+  initialState,
+  reducers: {
+    setOffersData(state, action) {
+      state.offers = action.payload.offers;
+    },
+  },
+});
 
-export const offersActions = offersSlice.actions
+export const offersActions = offersSlice.actions;
 
-export default offersSlice
+export default offersSlice;

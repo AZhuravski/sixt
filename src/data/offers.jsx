@@ -2769,8 +2769,7 @@ export const offers = {
         },
         modelExample: {
           name: "Audi S6",
-          imageUrl:
-            "https://sixt-vehicle-group-info-images-prod.s3-eu-west-1.amazonaws.com/a4673a457b660e2d73587fa4ffc1f973551aee36.jpeg",
+          imageUrl: "",
         },
         premium: true,
         luxury: true,
@@ -3027,7 +3026,7 @@ export const offers = {
       rentalDays: 3,
       rentalHours: 0,
       headlines: {
-        description: "Audi S6",
+        description: "Car without image",
         shortSubline: "garantiertes Modell | Premium Limousine",
         longSubline: "garantiertes Modell | Premium Limousine",
       },
