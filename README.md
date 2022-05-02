@@ -28,7 +28,7 @@ It makes working with Redux easy and enjoyable. More power with less code.
 
 Promise based HTTP client. Nothing new - just industry standard. Works fine and thank him for that.\
 Here I faced so called CORS (Cross-Origin Resource Sharing) Problem and wasn't able to get data from Sixt Server.\
-But some proxy setting at package.json file solved the issue. 
+But some proxy settings at package.json file solved the issue. 
 
 ### CSS - Emotion
 
