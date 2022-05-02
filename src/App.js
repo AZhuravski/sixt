@@ -1,7 +1,6 @@
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useEffectOnce } from "./hooks/useEffectOnce";
+import { useDispatch, useSelector } from "react-redux";
 import { getOffersData } from "./store/offersActions";
-import { useSelector } from "react-redux";
 import ErrorNotification from "./components/ErrorNotification";
 import Offers from "./components/Offers";
 import Header from "./components/Header";
@@ -15,19 +14,22 @@ const App = () => {
   const showOffers = appStatus.status === "success";
   const showErrorNotification = appStatus.status === "error";
 
-  useEffect(() => {
+  useEffectOnce(() => {
     dispatch(getOffersData());
   }, [dispatch]);
 
   return (
     <StyledAppWrapper>
       <Header />
+
       {showOffers && <Offers />}
+
       {showLoader && (
         <StyledLoader>
           <Loader type="box-rectangular" bgColor="rgb(25,25,25)" />
         </StyledLoader>
       )}
+
       {showErrorNotification && <ErrorNotification />}
     </StyledAppWrapper>
   );
