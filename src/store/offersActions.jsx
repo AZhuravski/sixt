@@ -1,10 +1,9 @@
 import { appStatusActions } from "./appStatusSlice";
 import { offersActions } from "./offersSlice";
-// import axios from "axios";
-import { offers } from "../data/offers";
+import axios from "axios";
 
 export const getOffersData = () => {
-  return async (dispatch) => {
+  return (dispatch) => {
     dispatch(
       appStatusActions.setAppStatus({
         status: "pending",
@@ -13,34 +12,25 @@ export const getOffersData = () => {
       })
     );
 
-    // axios.get('http://cdn.sixt.io/codingtask/offers.json')
-    //     .then(response => {
-    //         dispatch(offersActions.setOffersData(response.data.offers))
-    //         dispatch(
-    //             appStatusActions.setAppStatus({
-    //                 status: 'success',
-    //                 title: 'Success!',
-    //                 message: 'Offers data loaded!',
-    //             })
-    //         );
-    //     })
-    //     .catch(error => {
-    //         appStatusActions.setAppStatus({
-    //             status: 'error',
-    //             title: 'Error!',
-    //             message: 'Getting offers data failed!',
-    //         })
-    //     })
-
-    setTimeout(() => {
-      dispatch(offersActions.setOffersData(offers));
-      dispatch(
-        appStatusActions.setAppStatus({
-          status: "success",
-          title: "Success!",
-          message: "Offers data loaded!",
+    axios.get('/codingtask/offers.json')
+    .then(response => {
+            dispatch(offersActions.setOffersData(response.data))
+            dispatch(
+                appStatusActions.setAppStatus({
+                  status: "success",
+                  title: "Success!",
+                  message: "Offers data loaded!",
+                })
+              );
         })
-      );
-    }, 1000);
+        .catch(error => {
+            dispatch(
+                appStatusActions.setAppStatus({
+                  status: "error",
+                  title: "Error!",
+                  message: "Getting offers data failed!",
+                })
+              );
+        })
   };
 };
